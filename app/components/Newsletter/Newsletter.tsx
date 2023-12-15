@@ -1,4 +1,4 @@
-
+import Image from "next/image";
 const Newsletter = () => {
     return (
         <div id="join-section" className='-mt-32 relative z-10'>

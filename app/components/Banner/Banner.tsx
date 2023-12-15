@@ -1,6 +1,7 @@
 "use client"
 import Dropdownone from './Dropdownone';
 import Dropdowntwo from './Dropdowntwo';
+import Image from 'next/image';
 
 
 const Banner = () => {
