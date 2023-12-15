@@ -1,13 +1,13 @@
 import { Disclosure } from '@headlessui/react';
 import { Bars3Icon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
+import Image from 'next/image';
 import React from 'react';
 import Drawer from "./Drawer";
 import Drawerdata from "./Drawerdata";
 import Signdialog from "./Signdialog";
 import Registerdialog from "./Registerdialog";
 import Contactus from "./Contactus";
-
 
 interface NavigationItem {
     name: string;
@@ -28,25 +28,21 @@ function classNames(...classes: string[]) {
 }
 
 const Navbar = () => {
-
     const [isOpen, setIsOpen] = React.useState(false);
-
     return (
         <Disclosure as="nav" className="bg-lightpink navbar">
             <>
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="relative flex h-20 items-center justify-between">
                         <div className="flex flex-1 items-center sm:items-stretch sm:justify-start">
-
                             {/* LOGO */}
-
                             <div className="flex flex-shrink-0 items-center">
-                                <img
+                                <Image
                                     className="block h-30px w-30px lg:hidden"
                                     src={'/assets/logo/Logo.svg'}
                                     alt="Courses-Logo"
                                 />
-                                <img
+                                <Image
                                     className="hidden h-48px w-48px lg:block"
                                     src={'/assets/logo/Logo.svg'}
                                     alt="Courses-Logo"
@@ -74,31 +70,19 @@ const Navbar = () => {
                                 </div>
                             </div>
                         </div>
-
                         {/* SIGNIN DIALOG */}
-
                         <Signdialog />
-
-
                         {/* REGISTER DIALOG */}
-
                         <Registerdialog />
-
-
                         {/* DRAWER FOR MOBILE VIEW */}
-
                         {/* DRAWER ICON */}
-
                         <div className='block md:hidden'>
                             <Bars3Icon className="block h-6 w-6" aria-hidden="true" onClick={() => setIsOpen(true)} />
                         </div>
-
                         {/* DRAWER LINKS DATA */}
-
                         <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
                             <Drawerdata />
                         </Drawer>
-
                     </div>
                 </div>
             </>
