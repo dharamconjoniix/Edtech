@@ -1,8 +1,7 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 import { LockClosedIcon } from '@heroicons/react/20/solid'
-
-
+import Image from 'next/image'
 const Register = () => {
     let [isOpen, setIsOpen] = useState(false)
 
@@ -23,7 +22,6 @@ const Register = () => {
                     </button>
                 </div>
             </div>
-
             <Transition appear show={isOpen} as={Fragment}>
                 <Dialog as="div" className="relative z-10" onClose={closeModal}>
                     <Transition.Child
@@ -37,7 +35,6 @@ const Register = () => {
                     >
                         <div className="fixed inset-0 bg-black bg-opacity-25" />
                     </Transition.Child>
-
                     <div className="fixed inset-0 overflow-y-auto">
                         <div className="flex min-h-full items-center justify-center p-4 text-center">
                             <Transition.Child
@@ -50,11 +47,10 @@ const Register = () => {
                                 leaveTo="opacity-0 scale-95"
                             >
                                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-
                                     <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
                                         <div className="w-full max-w-md space-y-8">
                                             <div>
-                                                <img
+                                                <Image
                                                     className="mx-auto h-12 w-auto"
                                                     src="/assets/logo/Logo.svg"
                                                     alt="Your Company"
@@ -95,7 +91,6 @@ const Register = () => {
                                                         />
                                                     </div>
                                                 </div>
-
                                                 <div className="flex items-center justify-between">
                                                     <div className="flex items-center">
                                                         <input
@@ -108,9 +103,7 @@ const Register = () => {
                                                             Remember me
                                                         </label>
                                                     </div>
-
                                                 </div>
-
                                                 <div>
                                                     <button
                                                         type="submit"
@@ -125,8 +118,6 @@ const Register = () => {
                                             </form>
                                         </div>
                                     </div>
-
-
                                     <div className="mt-4 flex justify-end">
                                         <button
                                             type="button"
