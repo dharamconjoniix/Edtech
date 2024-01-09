@@ -2,8 +2,32 @@
 import Dropdownone from './Dropdownone';
 import Dropdowntwo from './Dropdowntwo';
 import Image from 'next/image';
+interface Product {
+    id: number;
+    imageSrc: string;
+    imageAlt: string;
+}
 
+const products: Product[] = [
+    {
+        id: 1,
+        imageSrc: '/assets/mentor/boy1.svg',
+        imageAlt: "Front of men's Basic Tee in black.",
 
+    },
+    {
+        id: 2,
+        imageSrc: '/assets/mentor/boy2.svg',
+        imageAlt: "Front of men's Basic Tee in black.",
+
+    },
+    {
+        id: 3,
+        imageSrc: '/assets/mentor/boy3.svg',
+        imageAlt: "Front of men's Basic Tee in black.",
+
+    },
+]
 const Banner = () => {
     return (
         <main className='banner-image'>
@@ -16,34 +40,18 @@ const Banner = () => {
                         <p className="mt-6 text-lg leading-8 text-black">
                             Build skills with our courses and mentor from world-class companies.
                         </p>
-                        <div className="mt-10 flex items-center justify-center gap-x-6">
-                            <div className="hidden sm:block -space-x-2 overflow-hidden">
-                                <Image
-                                    className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
-                                    src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                    alt=""
-                                />
-                                <Image
-                                    className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
-                                    src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                    alt=""
-                                />
-                                <Image
-                                    className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
-                                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80"
-                                    alt=""
-                                />
-                                <Image
-                                    className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
-                                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                    alt=""
-                                />
-                                <Image
-                                    className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
-                                    src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                    alt=""
-                                />
-                            </div>
+                        <div className="mt-10 flex items-center justify-center gap-x-1">
+                        {products.map((product) => {
+                                    return (
+                                        <>
+                                            <Image key={product.id}
+                                                className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
+                                                src={product.imageSrc}
+                                                alt={product.imageAlt}
+                                            />
+                                        </>
+                                    )
+                                })}
                             <div className='bannerBorder sm:pl-8'>
                                 <div className='flex justify-center sm:justify-start'>
                                     <h3 className='text-2xl font-semibold mr-2'>4.6</h3>
@@ -55,11 +63,6 @@ const Banner = () => {
                             </div>
                         </div>
                     </div>
-
-
-                    {/* DROPDOWN BUTTONS */}
-
-
                     <div className="mx-auto max-w-4xl mt-24 pt-6 pb-8 px-6 lg:max-w-4xl lg:px-8 bg-white rounded-lg boxshadow">
                         <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-8 xl:gap-x-8">
                             <div className="col-span-3">
@@ -75,7 +78,6 @@ const Banner = () => {
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </main>
